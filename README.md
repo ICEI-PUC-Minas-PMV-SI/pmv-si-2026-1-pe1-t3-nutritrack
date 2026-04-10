@@ -10,16 +10,17 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
+Bel Antonio de Aquino e Souza
+Iago Augusto Rocha de Paula Pereira 
+Larissa Evelyn Marques da Silva
+Matheus Ambrosio Almeida
+Tiago Marcio Oliveira Azevedo
+
 
 
 ## Orientador
 
-* Nome completo do professor 1
+Clovis Lemos Tavares
 
 # Planejamento
 
@@ -37,4 +38,6 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+<li><a href="presentation/README.md">O presente projeto tem como objetivo desenvolver um sistema web de contagem de calorias que auxilia os usuários no controle de sua alimentação diária. A proposta busca oferecer uma ferramenta que permita registrar os alimentos consumidos ao longo do dia e acompanhar a quantidade de calorias ingeridas, contribuindo para uma maior conscientização sobre os hábitos alimentares.
+Além disso, o sistema pretende facilitar o acompanhamento da alimentação de forma prática e acessível, permitindo que os usuários tenham uma visão mais clara sobre sua ingestão calórica e possam tomar decisões mais conscientes em relação à sua dieta. Dessa forma, o projeto busca incentivar a adoção de hábitos alimentares mais saudáveis e contribuir para a melhoria da qualidade de vida das pessoas.
+</a></li>
