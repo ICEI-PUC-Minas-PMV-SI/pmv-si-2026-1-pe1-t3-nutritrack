@@ -38,6 +38,6 @@ Clovis Lemos Tavares
 
 # Apresentação
 
-<li><a href="presentation/README.md">O presente projeto tem como objetivo desenvolver um sistema web de contagem de calorias que auxilia os usuários no controle de sua alimentação diária. A proposta busca oferecer uma ferramenta que permita registrar os alimentos consumidos ao longo do dia e acompanhar a quantidade de calorias ingeridas, contribuindo para uma maior conscientização sobre os hábitos alimentares.
+<li><a href="presentation/README.md">  O presente projeto tem como objetivo desenvolver um sistema web de contagem de calorias que auxilia os usuários no controle de sua alimentação diária. A proposta busca oferecer uma ferramenta que permita registrar os alimentos consumidos ao longo do dia e acompanhar a quantidade de calorias ingeridas, contribuindo para uma maior conscientização sobre os hábitos alimentares.
 Além disso, o sistema pretende facilitar o acompanhamento da alimentação de forma prática e acessível, permitindo que os usuários tenham uma visão mais clara sobre sua ingestão calórica e possam tomar decisões mais conscientes em relação à sua dieta. Dessa forma, o projeto busca incentivar a adoção de hábitos alimentares mais saudáveis e contribuir para a melhoria da qualidade de vida das pessoas.
 </a></li>
