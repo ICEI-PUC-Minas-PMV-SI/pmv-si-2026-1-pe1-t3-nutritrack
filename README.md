@@ -6,7 +6,9 @@
 
 `SEMESTRE: 1º`
 
-O projeto NutriTrack consiste no desenvolvimento de um sistema web de contagem de calorias, voltado para auxiliar usuários no controle da alimentação diária. O sistema permite o registro de alimentos consumidos, cálculo aproximado de calorias e acompanhamento da ingestão ao longo do dia. O sistema é direcionado a diferentes perfis de usuários, como estudantes, iniciantes em reeducação alimentar e praticantes de atividades físicas, oferecendo uma interface simples e intuitiva. Além disso, o projeto inclui requisitos funcionais e não funcionais, como cadastro de usuários, registro de alimentos, geração de relatórios e responsividade.
+O projeto **NutriTrack** consiste no desenvolvimento de um sistema web de contagem de calorias, voltado para auxiliar usuários no controle da alimentação diária. O sistema permite o registro de alimentos consumidos, cálculo aproximado de calorias e acompanhamento da ingestão ao longo do dia.
+
+O sistema é direcionado a diferentes perfis de usuários, como estudantes, iniciantes em reeducação alimentar e praticantes de atividades físicas, oferecendo uma interface simples e intuitiva. Além disso, o projeto inclui requisitos funcionais e não funcionais, como cadastro de usuários, registro de alimentos, geração de relatórios e responsividade.
 
 ## Integrantes
 
@@ -38,6 +40,6 @@ Clovis Lemos Tavares
 
 # Apresentação
 
-<li><a href="presentation/README.md">  O presente projeto tem como objetivo desenvolver um sistema web de contagem de calorias que auxilia os usuários no controle de sua alimentação diária. A proposta busca oferecer uma ferramenta que permita registrar os alimentos consumidos ao longo do dia e acompanhar a quantidade de calorias ingeridas, contribuindo para uma maior conscientização sobre os hábitos alimentares.
+O presente projeto tem como objetivo desenvolver um sistema web de contagem de calorias que auxilia os usuários no controle de sua alimentação diária. A proposta busca oferecer uma ferramenta que permita registrar os alimentos consumidos ao longo do dia e acompanhar a quantidade de calorias ingeridas, contribuindo para uma maior conscientização sobre os hábitos alimentares.
+
 Além disso, o sistema pretende facilitar o acompanhamento da alimentação de forma prática e acessível, permitindo que os usuários tenham uma visão mais clara sobre sua ingestão calórica e possam tomar decisões mais conscientes em relação à sua dieta. Dessa forma, o projeto busca incentivar a adoção de hábitos alimentares mais saudáveis e contribuir para a melhoria da qualidade de vida das pessoas.
-</a></li>
