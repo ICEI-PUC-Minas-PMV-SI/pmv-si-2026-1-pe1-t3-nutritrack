@@ -11,11 +11,11 @@ O projeto **NutriTrack** consiste no desenvolvimento de um sistema web de contag
 O sistema é direcionado a diferentes perfis de usuários, como estudantes, iniciantes em reeducação alimentar e praticantes de atividades físicas, oferecendo uma interface simples e intuitiva. Além disso, o projeto inclui requisitos funcionais e não funcionais, como cadastro de usuários, registro de alimentos, geração de relatórios e responsividade.
 
 ## Integrantes
-Bel Antonio de Aquino e Souza
-Iago Augusto Rocha de Paula Pereira
-Larissa Evelyn Marques da Silva 
-Matheus Ambrosio Almeida 
-Tiago Marcio Oliveira Azevedo
+- Bel Antonio de Aquino e Souza
+- Iago Augusto Rocha de Paula Pereira
+- Larissa Evelyn Marques da Silva 
+- Matheus Ambrosio Almeida 
+- Tiago Marcio Oliveira Azevedo
 
 
 
