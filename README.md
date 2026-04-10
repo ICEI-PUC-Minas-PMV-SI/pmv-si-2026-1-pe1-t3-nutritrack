@@ -58,4 +58,4 @@ Essa organização permitiu acompanhar o progresso do desenvolvimento do sistema
 
 ### 📸 Print do Kanban
 
-![Kanban NutriTrack](docs/kanban.png)
+![Kanban NutriTrack](docs/Kanban.png)
