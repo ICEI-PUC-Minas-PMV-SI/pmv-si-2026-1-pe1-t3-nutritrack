@@ -1,36 +1,69 @@
 # Template padrão do site
 
-Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+O template padrão do sistema NutriTrack foi desenvolvido com o objetivo de garantir consistência visual, organização das informações e facilidade de uso em todas as páginas da aplicação. O layout segue um padrão moderno, simples e responsivo, permitindo que o sistema seja acessado tanto por computadores quanto por dispositivos móveis.
 
-Explique as guias de estilo utilizadas no seu projeto.
+A identidade visual do sistema foi baseada em tons de azul, transmitindo confiança, tecnologia e saúde, alinhando-se com a proposta do sistema de controle alimentar.
+
+O template é composto por três principais áreas: cabeçalho, conteúdo principal e rodapé, que se repetem em todas as páginas do sistema.
 
 ## Design
 
-Detalhe os layouts que serão utilizados. Apresente onde será colocado o logo do sistema. Defina os menus padrões, entre outras coisas.
+O layout do sistema foi estruturado de forma clara e organizada para facilitar a navegação do usuário.
 
+O cabeçalho (header) está localizado na parte superior da página e contém o nome do sistema (NutriTrack), que funciona como identificação visual da aplicação, além do menu de navegação com as principais seções: Início, Histórico e Perfil.
+
+A área principal (main) é responsável por exibir o conteúdo de cada página. Nela são utilizados cartões (cards) para organizar as informações, como o resumo de calorias, o formulário de cadastro de alimentos e a lista de alimentos consumidos.
+
+O rodapé (footer) está localizado na parte inferior da página e contém informações básicas do sistema, como direitos autorais.
+
+O layout foi projetado para ser responsivo, adaptando-se automaticamente a diferentes tamanhos de tela, garantindo uma boa experiência de uso em dispositivos móveis.
 
 ## Cores
 
-Apresente a paleta de cores que será utilizada. Uma ferramenta interessante para a criação de palestas de cores é o *Adobe Color* ([https://color.adobe.com/pt/create/color-wheel](https://color.adobe.com/pt/create/color-wheel)).
+A paleta de cores utilizada no sistema foi definida com base em tons de azul, buscando transmitir confiança, leveza e modernidade.
 
+As principais cores utilizadas são:
+
+* Azul principal: #0d6efd
+* Azul escuro: #0a58ca
+* Fundo claro: #f4f7fb
+* Branco: #ffffff
+
+Essas cores foram aplicadas no cabeçalho, botões, cartões e fundo da aplicação, garantindo contraste adequado e boa legibilidade dos conteúdos.
 
 ## Tipografia
 
-Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
+A tipografia utilizada no sistema é baseada na fonte Arial, escolhida por sua simplicidade, legibilidade e ampla compatibilidade com diferentes dispositivos e navegadores.
 
+Sua aplicação no sistema ocorre da seguinte forma:
+
+* Título da página: utilizado no nome do sistema no cabeçalho
+* Títulos de seção: utilizados para destacar áreas como “Resumo do Dia”, “Adicionar Alimento” e “Histórico”
+* Corpo de texto: utilizado para informações gerais e descrições
+* Rótulos de componentes: utilizados em campos de entrada e botões
+
+Essa padronização contribui para uma leitura clara e organizada das informações.
 
 ## Iconografia
 
-Defina os ícones que serão utilizados e suas respectivas funções.
+A iconografia do sistema foi definida de forma simples e intuitiva, com o objetivo de facilitar a navegação e melhorar a experiência do usuário.
 
-Apresente os estilos CSS criados para cada um dos elementos apresentados.
-Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
+Os principais ícones utilizados são:
 
+* Ícone de adição (+): utilizado para representar a ação de adicionar alimentos
+* Ícone de histórico: utilizado para acessar o registro de refeições anteriores
+* Ícone de usuário: utilizado na seção de perfil
 
-> **Links Úteis**:
->
-> -  [Como criar um guia de estilo de design da Web](https://edrodrigues.com.br/blog/como-criar-um-guia-de-estilo-de-design-da-web/#)
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+Os ícones seguem um padrão visual consistente e auxiliam na identificação rápida das funcionalidades do sistema.
+
+## Estilos CSS
+
+Os estilos CSS foram definidos para garantir um layout moderno e organizado. Foram utilizados:
+
+* Cores padronizadas para cabeçalho, botões e fundo
+* Bordas arredondadas para cartões e botões
+* Sombras suaves para destacar elementos na tela
+* Espaçamentos internos (padding) para melhor organização
+* Layout responsivo com uso de media queries
+
+Esses estilos contribuem para uma interface agradável, moderna e de fácil utilização.
