@@ -1,9 +1,14 @@
 
 # Projeto de Interface
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
+O fluxo de usuário (User Flow) do sistema NutriTrack foi desenvolvido com o objetivo de garantir uma navegação simples, intuitiva e eficiente.
 
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
+O fluxo principal do sistema ocorre da seguinte forma:
+
+Acesso ao sistema → Tela inicial → Adicionar alimento → Atualização de calorias → Visualizar histórico → Ajustar perfil
+
+Esse fluxo permite que o usuário registre suas refeições, acompanhe sua ingestão calórica e gerencie suas informações de forma prática e rápida.
+
 
 ## User Flow
 
