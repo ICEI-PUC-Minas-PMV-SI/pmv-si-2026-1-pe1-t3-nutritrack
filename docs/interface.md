@@ -24,11 +24,17 @@ Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapea
 
 ## Wireframes
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface e é fundamental sempre relacionar cada wireframe com o(s) requisito(s) que ele atende.
+Os wireframes do sistema NutriTrack foram desenvolvidos com o objetivo de representar a estrutura das principais telas da aplicação.
 
-### Exemplo
+A tela inicial apresenta o resumo de calorias consumidas no dia, além de um formulário para adicionar alimentos e uma lista de registros, atendendo aos requisitos de cadastro e acompanhamento.
 
-A tela inicial apresenta um menu lateral com as principais seções do portal, enquanto a navigation bar, ao topo, apresenta informações de envio de imagens ou navegação pela galeria de fotos. A área central apresenta a galeria de fotos na forma de uma grade. Nesta tela, são apresentados os seguintes requisitos
+A tela de histórico permite visualizar o consumo calórico em dias anteriores, auxiliando no acompanhamento da evolução alimentar.
+
+A tela de perfil permite ao usuário definir informações pessoais e metas de consumo calórico, proporcionando maior controle sobre sua alimentação.
+
+Os wireframes foram elaborados priorizando simplicidade, organização e facilidade de uso.
+
+
 
 ![Exemplo de Wireframe](img/wireframe-example.png)
 
