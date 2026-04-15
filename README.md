@@ -50,7 +50,7 @@ O projeto NutriTrack foi organizado utilizando o GitHub Projects no modelo Kanba
 
 O quadro foi dividido em três colunas:
 - Pendência (tarefas a iniciar)
-- Fazendo (tarefas em desenvolvimento)
+- Fazendo ( em desenvolvimento)
 - Feito (tarefas concluídas)
 
 Essa organização permitiu acompanhar o progresso do desenvolvimento do sistema, facilitando o controle e a distribuição das atividades da equipe.
