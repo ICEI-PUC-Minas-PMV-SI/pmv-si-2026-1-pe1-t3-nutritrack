@@ -63,7 +63,7 @@ Ao selecionar o botão de editar entrada, campos para alteração das informaç�
 
 <img width="320" height="639" alt="Dashboard 3" src="https://github.com/user-attachments/assets/c98502c1-1b71-452a-a367-e94d0f197b88" />
 
-Figura 5.1 - Popup alimentos
+Figura 5.2 - Popup alimentos
 
 ### Registro de Alimentos
 
