@@ -22,12 +22,12 @@ O layout foi projetado para ser responsivo, adaptando-se automaticamente a difer
 
 A paleta de cores utilizada no sistema foi definida com base em tons de azul, buscando transmitir confiança, leveza e modernidade.
 
-As principais cores utilizadas são:
+As principais cores utilizadas são (Até o atual momento):
 
-* Azul principal: #0d6efd
-* Azul escuro: #0a58ca
-* Fundo claro: #f4f7fb
-* Branco: #ffffff
+* Verde principal
+* Preto estilização/Sombras
+* Fundo claro
+* Branco
 
 Essas cores foram aplicadas no cabeçalho, botões, cartões e fundo da aplicação, garantindo contraste adequado e boa legibilidade dos conteúdos.
 
