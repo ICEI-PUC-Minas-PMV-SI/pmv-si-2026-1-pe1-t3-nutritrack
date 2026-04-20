@@ -24,10 +24,17 @@ A paleta de cores utilizada no sistema foi definida com base em tons de azul, bu
 
 As principais cores utilizadas são (Até o atual momento):
 
-* Verde principal
-* Preto estilização/Sombras
-* Fundo claro
-* Branco
+* Cor principal: #39B54A
+* Cor clara: #72D59B
+* Cor escura: #0D4C63
+* Cor complementar: #BC4749
+* Branco: #FFFDE8
+* Preto: #0A0C1C
+
+<br>
+<img width="1200" height="250" alt="Artboard 1" src="https://github.com/user-attachments/assets/6a4dd1b1-3449-42c9-8ea0-20ea69ca7b00" />
+
+Figura 1 - Paleta de cores site
 
 Essas cores foram aplicadas no cabeçalho, botões, cartões e fundo da aplicação, garantindo contraste adequado e boa legibilidade dos conteúdos.
 
