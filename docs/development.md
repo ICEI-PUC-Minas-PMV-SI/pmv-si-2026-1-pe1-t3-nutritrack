@@ -40,3 +40,32 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 | Conteúdo       | Texto             | Conteúdo da notícia                       | Sistemas de Informação da PUC Minas é eleito o melhor curso do Brasil                            |
 | Id do usuário  | Numero (Inteiro)  | Identificador do usuário autor da notícia | 1                                              |
 
+
+
+### Requisitos de Funcionamento
+
+| Identificação | Descrição do Requisito | Responsável | Artefato Criado |
+| :--- | :--- | :--- | :--- |
+| RF-001 | O sistema deve permitir que o usuário gerencie seu cronograma de refeições | João Lucas | cronograma.html |
+| RF-002 | O sistema deve permitir o registro e a visualização de calorias consumidas | João Lucas | index.html |
+| RF-003 | O sistema deve permitir a escolha de planos nutricionais especializados | João Lucas | explorar.html |
+| RF-004 | O sistema deve permitir o cadastro de um novo usuário com perfil definido | João Lucas | login.html |
+
+### Descrição das Estruturas:
+
+#### Alimento / Registro de Consumo
+
+| Nome | Tipo | Categoria | Exemplo |
+| :--- | :--- | :--- | :--- |
+| Id | Número (Inteiro) | Identificador único do alimento | 1 |
+| Nome | Texto | Nome da refeição | Arroz integral |
+| Calorias | Número (Inteiro) | Valor calórico em kcal | 150 |
+| Id do usuário | Número (Inteiro) | Identificador do usuário | 1 |
+
+#### Cronograma de Refeições
+
+| Nome | Tipo | Categoria | Exemplo |
+| :--- | :--- | :--- | :--- |
+| Id | Número (Inteiro) | Identificador do horário | 1 |
+| Refeicao | Texto | Nome da refeição | Café da manhã |
+| Horario | Hora | Horário da refeição | 08:00 |
