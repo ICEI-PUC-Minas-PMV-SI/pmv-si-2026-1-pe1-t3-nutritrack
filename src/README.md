@@ -18,6 +18,12 @@ O sistema pode ser utilizado diretamente em qualquer navegador moderno.
 ## Histórico de versões
 
 ### [0.1.0] - 09/04/2026
+### [0.1.0] - 17/04/2026
+### [0.1.0] - 12/05/2026
+### [0.1.0] - 14/05/2026
+
+
+
 #### Adicionado
 - Estrutura inicial do projeto
 - Página base em HTML
