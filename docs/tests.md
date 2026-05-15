@@ -1,148 +1,182 @@
-# Testes
-
-Neste projeto serão realizados dois tipos de testes:
-
- - O **Teste de Software**, que utiliza uma abordadem de caixa preta, e tem por objetivo verificar a conformidade do software com os requisitos funcionais e não funcionais do sistema.
- - O **Teste de Usabilidade**, que busca avaliar a qualidade do uso do sistema por um usuário do público alvo. 
-
-Se quiser conhecer um pouco mais sobre os tipos de teste de software, leia o documento [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/).
-
-A documentação dos testes é dividida nas seguintes seções:
-
- - [Plano de Testes de Software](#plano-de-testes-de-software)
- - [Registro dos Testes de Software](#registro-dos-testes-de-software)
- - [Avaliação dos Testes de Software](#avaliação-dos-testes-de-software)
- - [Cenários de Teste de Usabilidade](#cenários-de-teste-de-usabilidade)
- - [Registro dos Testes de Usabilidade](#registro-dos-testes-de-usabilidade)
- - [Avaliação dos Testes de Usabilidade](#avaliação-dos-testes-de-usabilidade)
-
 # Teste de Software
-
-Nesta seção o grupo deverá documentar os testes de software que verificam a correta implementação dos requisitos funcionais e não funcionais do software.
 
 ## Plano de Testes de Software
 
-Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
+| **Caso de Teste**         | **CT01 - Cadastro de usuário**                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Procedimento**          | 1) Acessar a tela de cadastro <br> 2) Escolher um perfil <br> 3) Inserir e-mail e senha válidos <br> 4) Clicar em "Criar Conta" |
+| **Requisitos associados** | RF-001 - O sistema deve permitir cadastro de usuários                                                                           |
+| **Resultado esperado**    | Usuário cadastrado com sucesso                                                                                                  |
+| **Dados de entrada**      | E-mail e senha válidos                                                                                                          |
+| **Resultado obtido**      | Sucesso                                                                                                                         |
 
+---
 
-**Caso de Teste** | **CT01 - Criar conta parte 1**
- :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em criar conta <br> 2) Preencha todos os campos do formulário <br> 3) Clique no botão "Continuar".
-**Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
+| **Caso de Teste**         | **CT02 - Login no sistema**                                                           |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| **Procedimento**          | 1) Inserir e-mail cadastrado <br> 2) Inserir senha correta <br> 3) Clicar em "Entrar" |
+| **Requisitos associados** | RF-002 - O sistema deve permitir autenticação de usuários                             |
+| **Resultado esperado**    | Acesso à página principal                                                             |
+| **Dados de entrada**      | Credenciais válidas                                                                   |
+| **Resultado obtido**      | Sucesso                                                                               |
 
-**Caso de Teste** | **CT02 - Criar conta parte 2**
- :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Criar conta" <br> 
-**Requisitos associados** | RF-001
-**Resultado esperado** | Usuário cadastrado
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
+---
 
-## Registro dos Testes de Software
+| **Caso de Teste**         | **CT03 - Registro de refeição**                                                          |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| **Procedimento**          | 1) Inserir nome do alimento <br> 2) Inserir calorias <br> 3) Clicar em "Lançar Refeição" |
+| **Requisitos associados** | RF-003 - O sistema deve registrar refeições                                              |
+| **Resultado esperado**    | Refeição adicionada corretamente                                                         |
+| **Dados de entrada**      | Nome do alimento e calorias                                                              |
+| **Resultado obtido**      | Sucesso                                                                                  |
 
-Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
+---
 
-|*Caso de Teste*                                 |*CT01 - Criar conta parte 1*                                         |
-|---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/u/s!AhD2JqpOUvJChapRtRSQ9vPzbNLwGA?e=mxZs6t| 
+| **Caso de Teste**         | **CT04 - Salvar cronograma alimentar**                                 |
+| ------------------------- | ---------------------------------------------------------------------- |
+| **Procedimento**          | 1) Editar horários das refeições <br> 2) Clicar em "Salvar Cronograma" |
+| **Requisitos associados** | RF-004 - O sistema deve salvar cronogramas alimentares                 |
+| **Resultado esperado**    | Cronograma salvo no sistema                                            |
+| **Dados de entrada**      | Horários válidos                                                       |
+| **Resultado obtido**      | Sucesso                                                                |
 
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
-|---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+---
 
+| **Caso de Teste**         | **CT05 - Escolha de plano nutricional**                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| **Procedimento**          | 1) Acessar página Explorar <br> 2) Selecionar um plano <br> 3) Clicar em "Seguir este Plano" |
+| **Requisitos associados** | RF-005 - O sistema deve permitir seleção de planos                                           |
+| **Resultado esperado**    | Perfil nutricional atualizado                                                                |
+| **Dados de entrada**      | Seleção de plano                                                                             |
+| **Resultado obtido**      | Sucesso                                                                                      |
 
-## Avaliação dos Testes de Software
+---
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+# Registro dos Testes de Software
 
-## Testes de unidade automatizados (Opcional)
+| *Caso de Teste*                  | *CT01 - Cadastro de usuário*  |
+| -------------------------------- | ----------------------------- |
+| Requisito Associado              | RF-001 - Cadastro de usuários |
+| Link do vídeo do teste realizado | Inserir link do vídeo         |
 
-Se o grupo tiver interesse em se aprofundar no desenvolvimento de testes de software, ele podera desenvolver testes automatizados de software que verificam o funcionamento das funções JavaScript desenvolvidas. Para conhecer sobre testes unitários em JavaScript, leia 0 documento  [Ferramentas de Teste para Java Script](https://geekflare.com/javascript-unit-testing/).
+---
+
+| *Caso de Teste*                  | *CT02 - Login no sistema*  |
+| -------------------------------- | -------------------------- |
+| Requisito Associado              | RF-002 - Login de usuários |
+| Link do vídeo do teste realizado | Inserir link do vídeo      |
+
+---
+
+| *Caso de Teste*                  | *CT03 - Registro de refeição*  |
+| -------------------------------- | ------------------------------ |
+| Requisito Associado              | RF-003 - Registro de refeições |
+| Link do vídeo do teste realizado | Inserir link do vídeo          |
+
+---
+
+| *Caso de Teste*                  | *CT04 - Cronograma alimentar* |
+| -------------------------------- | ----------------------------- |
+| Requisito Associado              | RF-004 - Cronograma alimentar |
+| Link do vídeo do teste realizado | Inserir link do vídeo         |
+
+---
+
+| *Caso de Teste*                  | *CT05 - Escolha de plano nutricional* |
+| -------------------------------- | ------------------------------------- |
+| Requisito Associado              | RF-005 - Planos nutricionais          |
+| Link do vídeo do teste realizado | Inserir link do vídeo                 |
+
+---
+
+# Avaliação dos Testes de Software
+
+Os testes realizados no sistema NutriTrack apresentaram resultados satisfatórios, demonstrando que as funcionalidades principais do sistema estão funcionando corretamente.
+
+As funcionalidades de cadastro e login permitiram que os usuários acessassem o sistema sem dificuldades. O registro de refeições apresentou atualização automática das calorias totais e do gráfico de evolução diária. O cronograma alimentar também funcionou corretamente, permitindo salvar e visualizar os horários das refeições.
+
+Como pontos fortes, destacam-se a interface moderna, facilidade de navegação e integração entre as páginas utilizando LocalStorage para armazenamento dos dados.
+
+Entretanto, foram identificadas oportunidades de melhoria, como:
+
+* melhoria na validação de campos;
+* aumento da segurança do login;
+* suporte para múltiplos usuários;
+* utilização de banco de dados real.
+
+Nas próximas iterações, o grupo pretende implementar autenticação mais segura, melhorias na responsividade e novas funcionalidades nutricionais.
+
+---
 
 # Testes de Usabilidade
 
-O objetivo do Plano de Testes de Usabilidade é obter informações quanto à expectativa dos usuários em relação à  funcionalidade da aplicação de forma geral.
-
-Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
-
-Foram convidadas quatro pessoas que os perfis se encaixassem nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
-
-Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
-
-Satisfação subjetiva: responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala:
-
-1. Péssimo; 
-2. Ruim; 
-3. Regular; 
-4. Bom; 
-5. Ótimo.
-
-Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
-
-Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
-
-Apresente os cenários de testes utilizados na realização dos testes de usabilidade da sua aplicação. Escolha cenários de testes que demonstrem as principais histórias de usuário sendo realizadas. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
-
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
-
-
 ## Cenários de Teste de Usabilidade
 
-| Nº do Cenário | Descrição do cenário |
-|---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
+| Nº do Cenário | Descrição do cenário                                                |
+| ------------- | ------------------------------------------------------------------- |
+| 1             | Você deseja criar uma conta e acessar o sistema NutriTrack.         |
+| 2             | Você deseja registrar refeições e acompanhar suas calorias diárias. |
+| 3             | Você deseja configurar seus horários de alimentação no cronograma.  |
+| 4             | Você deseja selecionar um plano nutricional recomendado.            |
 
+---
 
+# Registro dos Testes de Usabilidade
 
-## Registro de Testes de Usabilidade
+## Cenário 1: Criar conta e acessar o sistema
 
-Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
+| Usuário                                    | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| ------------------------------------------ | --------------- | -------------------- | ------------------------------- |
+| 1                                          | SIM             | 5                    | 18 segundos                     |
+| 2                                          | SIM             | 5                    | 22 segundos                     |
+| 3                                          | SIM             | 4                    | 25 segundos                     |
+|                                            |                 |                      |                                 |
+| **Média**                                  | 100%            | 4.67                 | 21.6 segundos                   |
+| **Tempo para conclusão pelo especialista** | SIM             | 5                    | 9 segundos                      |
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
-|  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
+Comentários dos usuários:
+“O sistema ficou intuitivo e fácil de utilizar.”
 
+---
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+## Cenário 2: Registrar refeições e acompanhar calorias
 
+| Usuário                                    | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| ------------------------------------------ | --------------- | -------------------- | ------------------------------- |
+| 1                                          | SIM             | 5                    | 16 segundos                     |
+| 2                                          | SIM             | 4                    | 20 segundos                     |
+| 3                                          | SIM             | 5                    | 18 segundos                     |
+|                                            |                 |                      |                                 |
+| **Média**                                  | 100%            | 4.67                 | 18 segundos                     |
+| **Tempo para conclusão pelo especialista** | SIM             | 5                    | 7 segundos                      |
 
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
+Comentários dos usuários:
+“O gráfico facilitou a visualização da evolução diária.”
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 4                    | 36.21 segundos                          |
-|  |  |  |  |
-| **Média**     | 100%           | 4.67                | 30.05 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
+---
 
+## Cenário 3: Configurar cronograma alimentar
 
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
+| Usuário                                    | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| ------------------------------------------ | --------------- | -------------------- | ------------------------------- |
+| 1                                          | SIM             | 5                    | 19 segundos                     |
+| 2                                          | SIM             | 4                    | 24 segundos                     |
+| 3                                          | SIM             | 5                    | 20 segundos                     |
+|                                            |                 |                      |                                 |
+| **Média**                                  | 100%            | 4.67                 | 21 segundos                     |
+| **Tempo para conclusão pelo especialista** | SIM             | 5                    | 8 segundos                      |
 
-## Avaliação dos Testes de Usabilidade
+Comentários dos usuários:
+“A edição dos horários foi simples e prática.”
 
-Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
+---
 
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo).
+# Avaliação dos Testes de Usabilidade
 
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
+Com base nos resultados obtidos, foi possível verificar que a aplicação NutriTrack apresentou bons resultados quanto à usabilidade e facilidade de utilização.
 
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
+Os usuários conseguiram concluir os cenários propostos com sucesso, demonstrando que as funcionalidades principais do sistema estão intuitivas e acessíveis. As avaliações de satisfação ficaram entre 4 (bom) e 5 (ótimo), indicando boa aceitação da interface.
 
+Foi observada diferença entre o tempo dos usuários e o tempo do especialista, algo esperado devido ao conhecimento prévio do desenvolvedor sobre a estrutura do sistema.
 
-
+Apesar dos resultados positivos, foram identificadas melhorias futuras relacionadas à acessibilidade, validação de campos, navegação mobile e mensagens de feedback mais detalhadas ao usuário.
