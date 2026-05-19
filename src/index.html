@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack | Smart Health</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
+
         :root {
             --primary: #4ade80;
             --primary-dark: #22c55e;
@@ -21,186 +22,381 @@
             --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
-
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Plus Jakarta Sans', sans-serif;
         }
 
-        header h1 {
-            font-weight: 800;
-            font-size: 1.5rem;
-            background: linear-gradient(to right, var(--primary-dark), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        body{
+            background-color:var(--bg-body);
+            color:var(--text-main);
+            line-height:1.6;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-left: 1.5rem;
-            transition: 0.3s;
-            font-size: 0.9rem;
+        header{
+            background:rgba(255,255,255,0.8);
+            backdrop-filter:blur(12px);
+            padding:1.5rem 5%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:100;
+            border-bottom:1px solid rgba(0,0,0,0.05);
         }
 
-        nav a:hover { color: var(--primary-dark); }
-
-        main { padding: 2rem 5%; max-width: 1400px; margin: 0 auto; }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+        header h1{
+            font-weight:800;
+            font-size:1.5rem;
+            background:linear-gradient(to right,var(--primary-dark),var(--secondary));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
-        .card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            transition: 0.3s;
+        nav a{
+            text-decoration:none;
+            color:var(--text-muted);
+            font-weight:600;
+            margin-left:1.5rem;
+            transition:0.3s;
+            font-size:0.9rem;
         }
 
-        .profile-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
+        nav a:hover{
+            color:var(--primary-dark);
         }
 
-        .rec-item {
-            background: #f1f5f9;
-            padding: 14px;
-            border-radius: 14px;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-left: 4px solid var(--primary);
+        main{
+            padding:2rem 5%;
+            max-width:1400px;
+            margin:0 auto;
         }
 
-        h2 { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; font-weight: 800; }
-        
-        input { 
-            width: 100%; padding: 1rem; margin-top: 1rem; 
-            border: 2px solid #f1f5f9; border-radius: 16px; 
-            outline: none; background: #f8fafc; transition: 0.3s;
-        }
-        
-        input:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1); }
-
-        button { 
-            width: 100%; padding: 1rem; margin-top: 1rem; 
-            border: none; border-radius: 16px; background: var(--primary-dark); 
-            color: white; font-weight: 700; cursor: pointer; transition: 0.3s; 
+        .dashboard{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:2rem;
         }
 
-        button:hover { background: #16a34a; transform: scale(1.02); }
-        
-        progress { width: 100%; height: 12px; border-radius: 10px; appearance: none; margin: 1.5rem 0; }
-        progress::-webkit-progress-bar { background-color: #e2e8f0; border-radius: 10px; }
-        progress::-webkit-progress-value { background: linear-gradient(to right, var(--primary), var(--primary-dark)); border-radius: 10px; }
-
-        .btn-explorar {
-            background: var(--text-main); color: white; text-decoration: none;
-            padding: 12px; border-radius: 14px; display: block;
-            text-align: center; margin-top: 20px; font-size: 0.8rem; font-weight: 700;
+        .card{
+            background:var(--bg-card);
+            padding:2rem;
+            border-radius:var(--radius);
+            box-shadow:var(--shadow);
+            border:1px solid rgba(255,255,255,0.7);
+            transition:0.3s;
         }
 
-        .schedule-item {
-            display: flex; justify-content: space-between; padding: 12px 0;
-            border-bottom: 1px solid #f1f5f9; font-size: 0.9rem;
+        .profile-badge{
+            display:inline-block;
+            padding:6px 14px;
+            border-radius:50px;
+            font-size:0.7rem;
+            font-weight:800;
+            text-transform:uppercase;
+            margin-bottom:15px;
+            letter-spacing:0.5px;
         }
 
-        ul li {
-            padding: 10px; background: #f8fafc; border-radius: 12px;
-            margin-top: 8px; display: flex; justify-content: space-between;
-            font-size: 0.85rem; border-left: 4px solid var(--primary);
+        .rec-item{
+            background:#f1f5f9;
+            padding:14px;
+            border-radius:14px;
+            margin-top:12px;
+            font-size:0.85rem;
+            font-weight:600;
+            border-left:4px solid var(--primary);
         }
 
-        footer { text-align: center; padding: 4rem; color: var(--text-muted); font-size: 0.8rem; }
+        h2{
+            font-size:1.2rem;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-weight:800;
+        }
+
+        input{
+            width:100%;
+            padding:1rem;
+            margin-top:1rem;
+            border:2px solid #f1f5f9;
+            border-radius:16px;
+            outline:none;
+            background:#f8fafc;
+            transition:0.3s;
+        }
+
+        input:focus{
+            border-color:var(--primary);
+            background:#fff;
+            box-shadow:0 0 0 4px rgba(74,222,128,0.1);
+        }
+
+        button{
+            width:100%;
+            padding:1rem;
+            margin-top:1rem;
+            border:none;
+            border-radius:16px;
+            background:var(--primary-dark);
+            color:white;
+            font-weight:700;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#16a34a;
+            transform:scale(1.02);
+        }
+
+        progress{
+            width:100%;
+            height:12px;
+            border-radius:10px;
+            appearance:none;
+            margin:1.5rem 0;
+        }
+
+        progress::-webkit-progress-bar{
+            background-color:#e2e8f0;
+            border-radius:10px;
+        }
+
+        progress::-webkit-progress-value{
+            background:linear-gradient(to right,var(--primary),var(--primary-dark));
+            border-radius:10px;
+        }
+
+        .btn-explorar{
+            background:var(--text-main);
+            color:white;
+            text-decoration:none;
+            padding:12px;
+            border-radius:14px;
+            display:block;
+            text-align:center;
+            margin-top:20px;
+            font-size:0.8rem;
+            font-weight:700;
+        }
+
+        .schedule-item{
+            display:flex;
+            justify-content:space-between;
+            padding:12px 0;
+            border-bottom:1px solid #f1f5f9;
+            font-size:0.9rem;
+        }
+
+        ul{
+            list-style:none;
+        }
+
+        ul li{
+            padding:14px;
+            background:#f8fafc;
+            border-radius:14px;
+            margin-top:10px;
+            border-left:4px solid var(--primary);
+        }
+
+        .meal-item{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:10px;
+        }
+
+        .meal-info{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .meal-info span{
+            font-weight:700;
+        }
+
+        .meal-info strong{
+            color:var(--text-muted);
+            font-size:0.85rem;
+        }
+
+        .meal-actions{
+            display:flex;
+            gap:8px;
+        }
+
+        .meal-btn{
+            border:none;
+            padding:8px 12px;
+            border-radius:10px;
+            color:white;
+            font-size:0.75rem;
+            font-weight:700;
+            cursor:pointer;
+        }
+
+        .edit-btn{
+            background:#3b82f6;
+        }
+
+        .delete-btn{
+            background:#ef4444;
+        }
+
+        footer{
+            text-align:center;
+            padding:4rem;
+            color:var(--text-muted);
+            font-size:0.8rem;
+        }
+
     </style>
 </head>
+
 <body>
 
 <header>
+
     <div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="nutritracK_1_-removebg-preview.png" alt="logo" height="30">
-            <h1>NutriTrack</h1>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <img src="nutri.png" height="60">
+            <h1></h1>
         </div>
-        <p id="user-greeting" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">CARREGANDO...</p>
+
+        <p id="user-greeting"
+        style="font-size:0.7rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:1px;">
+            CARREGANDO...
+        </p>
     </div>
+
     <nav>
-        <a href="index.html" style="color: var(--primary-dark)">Início</a>
+        <a href="index.html" style="color:var(--primary-dark)">Início</a>
         <a href="explorar.html">Explorar</a>
         <a href="historico.html">Histórico</a>
         <a href="perfil.html">Perfil</a>
     </nav>
+
 </header>
 
 <main>
+
     <div class="dashboard">
 
+        <!-- RESUMO -->
+
         <div class="card">
+
             <div id="badge-area"></div>
+
             <h2>📊 Resumo do Dia</h2>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1.5rem;">
-                <span style="font-size: 2.8rem; font-weight: 800;"><span id="total">0</span> <small style="font-size: 1rem; color: var(--text-muted);">kcal</small></span>
-                <span style="color: var(--text-muted); font-weight: 700; margin-bottom: 10px;">Meta: <span id="meta-val">2000</span></span>
+
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:1.5rem;">
+
+                <span style="font-size:2.8rem; font-weight:800;">
+                    <span id="total">0</span>
+                    <small style="font-size:1rem; color:var(--text-muted);">
+                        kcal
+                    </small>
+                </span>
+
+                <span style="color:var(--text-muted); font-weight:700; margin-bottom:10px;">
+                    Meta:
+                    <span id="meta-val">2000</span>
+                </span>
+
             </div>
+
             <progress id="barra" value="0" max="2000"></progress>
-            <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Consumo: <span id="percent">0</span>% atingido</p>
-            <button onclick="novoDia()" style="background:#64748b; margin-top:15px; font-size: 0.7rem; padding: 8px;">Limpar Dia</button>
+
+            <p style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">
+                Consumo:
+                <span id="percent">0</span>% atingido
+            </p>
+
+            <button onclick="novoDia()"
+            style="background:#64748b; margin-top:15px; font-size:0.7rem; padding:8px;">
+                Limpar Dia
+            </button>
+
         </div>
 
-        <div class="card" id="card-recomendacoes">
+        <!-- DICAS -->
+
+        <div class="card">
+
             <h2>💡 Dicas de Especialistas</h2>
+
             <div id="lista-recomendacoes"></div>
-            <a href="explorar.html" class="btn-explorar">Explorar Novos Planos</a>
+
+            <a href="explorar.html" class="btn-explorar">
+                Explorar Novos Planos
+            </a>
+
         </div>
 
+        <!-- NOVA REFEIÇÃO -->
+
         <div class="card">
+
             <h2>➕ Novo Registro</h2>
+
             <input type="text" id="nome" placeholder="Nome do alimento">
+
             <input type="number" id="calorias" placeholder="Calorias">
-            <button onclick="adicionar()">Lançar Refeição</button>
+
+            <button onclick="adicionar()">
+                Lançar Refeição
+            </button>
+
         </div>
 
-        <div class="card" id="cronograma-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <h2>⏰ Cronograma</h2>
-                <a href="cronograma.html" style="text-decoration:none; font-size:0.7rem; font-weight:800; color:var(--primary-dark); background:rgba(74,222,128,0.1); padding:5px 10px; border-radius:8px;">EDITAR</a>
-            </div>
-            <div id="lista-cronograma"></div>
-        </div>
+        <!-- CRONOGRAMA -->
 
         <div class="card">
-            <h2>📝 Refeições de Hoje</h2>
-            <ul id="lista"></ul>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+
+                <h2>⏰ Cronograma</h2>
+
+                <a href="cronograma.html"
+                style="text-decoration:none; font-size:0.7rem; font-weight:800; color:var(--primary-dark); background:rgba(74,222,128,0.1); padding:5px 10px; border-radius:8px;">
+                    EDITAR
+                </a>
+
+            </div>
+
+            <div id="lista-cronograma"></div>
+
         </div>
 
-        <div class="card" style="grid-column: span 2;">
+        <!-- REFEIÇÕES -->
+
+        <div class="card">
+
+            <h2>📝 Refeições de Hoje</h2>
+
+            <ul id="lista"></ul>
+
+        </div>
+
+        <!-- GRÁFICO -->
+
+        <div class="card" style="grid-column:span 2;">
+
             <h2>📈 Evolução de Hoje</h2>
+
             <canvas id="grafico" height="100"></canvas>
+
         </div>
 
     </div>
+
 </main>
 
 <footer>
@@ -208,95 +404,386 @@
 </footer>
 
 <script>
+
 let totalCaloriasNoDia = 0;
 let metaGlobal = 2000;
 
 const ctx = document.getElementById('grafico').getContext('2d');
+
 const grafico = new Chart(ctx, {
-    type: 'line',
-    data: { labels: [], datasets: [{ label: 'kcal', data: [], borderColor: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', fill: true, tension: 0.4 }] },
-    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true }, x: { grid: { display: false } } } }
+
+    type:'line',
+
+    data:{
+        labels:[],
+
+        datasets:[{
+            label:'kcal',
+            data:[],
+            borderColor:'#22c55e',
+            backgroundColor:'rgba(34, 197, 94, 0.1)',
+            fill:true,
+            tension:0.4
+        }]
+    },
+
+    options:{
+        responsive:true,
+
+        plugins:{
+            legend:{
+                display:false
+            }
+        },
+
+        scales:{
+            y:{
+                beginAtZero:true
+            },
+
+            x:{
+                grid:{
+                    display:false
+                }
+            }
+        }
+    }
 });
 
-function inicializar() {
-    const perfil = localStorage.getItem('perfilUsuario') || 'dia-a-dia';
-    const nomeSalvo = localStorage.getItem('nutri_nome') || 'Usuário';
-    const metaSalva = localStorage.getItem('nutri_meta'); // Chave correta sincronizada
+function inicializar(){
 
-    document.getElementById('user-greeting').innerText = `OLÁ, ${nomeSalvo.toUpperCase()} | PERFIL: ${perfil.toUpperCase()}`;
-    
+    const perfil =
+        localStorage.getItem('perfilUsuario') || 'dia-a-dia';
+
+    const nomeSalvo =
+        localStorage.getItem('nutri_nome') || 'Usuário';
+
+    const metaSalva =
+        localStorage.getItem('nutri_meta');
+
+    document.getElementById('user-greeting').innerText =
+        `OLÁ, ${nomeSalvo.toUpperCase()} | PERFIL: ${perfil.toUpperCase()}`;
+
     const configs = {
-        'fitness': { cor: '#3b82f6', emoji: '💪', meta: 2800, dicas: ['Foque em proteínas magras', 'Beba água antes do treino'] },
-        'tratamento': { cor: '#ef4444', emoji: '🩺', meta: 1800, dicas: ['Controle o índice glicêmico', 'Evite açúcares hoje'] },
-        'performance': { cor: '#f59e0b', emoji: '⚡', meta: 3200, dicas: ['Mantenha o foco mental', 'Gorduras boas liberadas'] },
-        'dia-a-dia': { cor: '#10b981', emoji: '🏠', meta: 2000, dicas: ['Procure subir escadas', 'Uma fruta após o almoço'] }
+
+        'fitness':{
+            cor:'#3b82f6',
+            emoji:'💪',
+            meta:2800,
+            dicas:[
+                'Foque em proteínas magras',
+                'Beba água antes do treino'
+            ]
+        },
+
+        'tratamento':{
+            cor:'#ef4444',
+            emoji:'🩺',
+            meta:1800,
+            dicas:[
+                'Controle o índice glicêmico',
+                'Evite açúcares hoje'
+            ]
+        },
+
+        'performance':{
+            cor:'#f59e0b',
+            emoji:'⚡',
+            meta:3200,
+            dicas:[
+                'Mantenha o foco mental',
+                'Gorduras boas liberadas'
+            ]
+        },
+
+        'dia-a-dia':{
+            cor:'#10b981',
+            emoji:'🏠',
+            meta:2000,
+            dicas:[
+                'Procure subir escadas',
+                'Uma fruta após o almoço'
+            ]
+        }
     };
 
-    const config = configs[perfil] || configs['dia-a-dia'];
-    
-    // Prioriza a meta salva no LocalStorage (vinda do Explorar ou Perfil)
-    metaGlobal = metaSalva ? parseInt(metaSalva) : config.meta;
+    const config =
+        configs[perfil] || configs['dia-a-dia'];
 
-    document.getElementById('meta-val').innerText = metaGlobal;
-    document.getElementById('barra').max = metaGlobal;
-    document.getElementById('badge-area').innerHTML = `<span class="profile-badge" style="background:${config.cor}22; color:${config.cor}">${config.emoji} ${perfil}</span>`;
-    document.getElementById('lista-recomendacoes').innerHTML = config.dicas.map(d => `<div class="rec-item">${d}</div>`).join('');
+    metaGlobal =
+        metaSalva ? parseInt(metaSalva) : config.meta;
 
-    // CARREGAR ALIMENTOS SALVOS
-    const alimentosSalvos = JSON.parse(localStorage.getItem('alimentosHoje')) || [];
-    alimentosSalvos.forEach(item => renderizarAlimento(item.nome, item.calorias, false));
-    
-    // CARREGAR CRONOGRAMA
-    const crono = JSON.parse(localStorage.getItem('meuCronograma'));
-    if(crono) {
-        document.getElementById('lista-cronograma').innerHTML = crono.map(i => `
-            <div class="schedule-item"><span>${i.nome}</span><strong>${i.hora}</strong></div>
-        `).join('');
+    document.getElementById('meta-val').innerText =
+        metaGlobal;
+
+    document.getElementById('barra').max =
+        metaGlobal;
+
+    document.getElementById('badge-area').innerHTML =
+        `<span class="profile-badge"
+        style="background:${config.cor}22; color:${config.cor}">
+            ${config.emoji} ${perfil}
+        </span>`;
+
+    document.getElementById('lista-recomendacoes').innerHTML =
+        config.dicas.map(d =>
+            `<div class="rec-item">${d}</div>`
+        ).join('');
+
+    // CARREGAR REFEIÇÕES
+
+    const alimentosSalvos =
+        JSON.parse(localStorage.getItem('alimentosHoje')) || [];
+
+    alimentosSalvos.forEach(item => {
+
+        renderizarAlimento(
+            item.nome,
+            item.calorias,
+            false
+        );
+    });
+
+    // CRONOGRAMA
+
+    const crono =
+        JSON.parse(localStorage.getItem('meuCronograma'));
+
+    if(crono){
+
+        document.getElementById('lista-cronograma').innerHTML =
+            crono.map(i => `
+                <div class="schedule-item">
+                    <span>${i.nome}</span>
+                    <strong>${i.hora}</strong>
+                </div>
+            `).join('');
     }
 }
 
-function adicionar() {
-    const n = document.getElementById("nome");
-    const c = document.getElementById("calorias");
-    const val = parseInt(c.value);
+function adicionar(){
 
-    if(!n.value || isNaN(val)) return alert("Preencha o nome e as calorias!");
+    const nome =
+        document.getElementById("nome");
 
-    renderizarAlimento(n.value, val, true);
+    const calorias =
+        document.getElementById("calorias");
 
-    n.value = ""; c.value = ""; n.focus();
+    const valor =
+        parseInt(calorias.value);
+
+    if(!nome.value || isNaN(valor)){
+
+        alert("Preencha o nome e as calorias!");
+        return;
+    }
+
+    renderizarAlimento(
+        nome.value,
+        valor,
+        true
+    );
+
+    nome.value = "";
+    calorias.value = "";
+
+    nome.focus();
 }
 
-function renderizarAlimento(nome, calorias, salvar) {
+function renderizarAlimento(nome, calorias, salvar){
+
     totalCaloriasNoDia += calorias;
-    
-    document.getElementById("total").innerText = totalCaloriasNoDia;
-    document.getElementById("barra").value = totalCaloriasNoDia;
-    document.getElementById("percent").innerText = Math.round((totalCaloriasNoDia / metaGlobal) * 100);
+
+    atualizarResumo();
 
     const li = document.createElement("li");
-    li.innerHTML = `<span>${nome}</span> <strong>${calorias} kcal</strong>`;
+
+    li.innerHTML = `
+
+        <div class="meal-item">
+
+            <div class="meal-info">
+
+                <span class="nome-ref">
+                    ${nome}
+                </span>
+
+                <strong class="cal-ref">
+                    ${calorias} kcal
+                </strong>
+
+            </div>
+
+            <div class="meal-actions">
+
+                <button class="meal-btn edit-btn">
+                    Editar
+                </button>
+
+                <button class="meal-btn delete-btn">
+                    Excluir
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
     document.getElementById("lista").prepend(li);
 
     grafico.data.labels.push(nome);
+
     grafico.data.datasets[0].data.push(calorias);
+
     grafico.update();
 
-    if(salvar) {
-        const salvos = JSON.parse(localStorage.getItem('alimentosHoje')) || [];
-        salvos.push({ nome, calorias });
-        localStorage.setItem('alimentosHoje', JSON.stringify(salvos));
+    if(salvar){
+
+        const salvos =
+            JSON.parse(localStorage.getItem('alimentosHoje')) || [];
+
+        salvos.push({
+            nome,
+            calorias
+        });
+
+        localStorage.setItem(
+            'alimentosHoje',
+            JSON.stringify(salvos)
+        );
     }
+
+    // EDITAR
+
+    li.querySelector(".edit-btn").onclick = () => {
+
+        const novoNome =
+            prompt("Editar nome:", nome);
+
+        const novasCalorias =
+            parseInt(
+                prompt("Editar calorias:", calorias)
+            );
+
+        if(!novoNome || isNaN(novasCalorias)) return;
+
+        totalCaloriasNoDia -= calorias;
+
+        nome = novoNome;
+        calorias = novasCalorias;
+
+        totalCaloriasNoDia += calorias;
+
+        li.querySelector(".nome-ref").innerText =
+            nome;
+
+        li.querySelector(".cal-ref").innerText =
+            calorias + " kcal";
+
+        atualizarResumo();
+
+        atualizarStorage();
+
+        atualizarGrafico();
+    };
+
+    // EXCLUIR
+
+    li.querySelector(".delete-btn").onclick = () => {
+
+        if(!confirm("Deseja excluir esta refeição?")) return;
+
+        totalCaloriasNoDia -= calorias;
+
+        li.remove();
+
+        atualizarResumo();
+
+        atualizarStorage();
+
+        atualizarGrafico();
+    };
 }
 
-function novoDia() {
-    if(confirm("Deseja limpar as refeições de hoje?")) {
+function atualizarResumo(){
+
+    document.getElementById("total").innerText =
+        totalCaloriasNoDia;
+
+    document.getElementById("barra").value =
+        totalCaloriasNoDia;
+
+    document.getElementById("percent").innerText =
+        Math.round(
+            (totalCaloriasNoDia / metaGlobal) * 100
+        );
+}
+
+function atualizarStorage(){
+
+    const itens = [];
+
+    document.querySelectorAll("#lista li").forEach(li => {
+
+        const nome =
+            li.querySelector(".nome-ref").innerText.trim();
+
+        const calorias =
+            parseInt(
+                li.querySelector(".cal-ref")
+                .innerText.replace(" kcal", "")
+            );
+
+        itens.push({
+            nome,
+            calorias
+        });
+    });
+
+    localStorage.setItem(
+        "alimentosHoje",
+        JSON.stringify(itens)
+    );
+}
+
+function atualizarGrafico(){
+
+    grafico.data.labels = [];
+
+    grafico.data.datasets[0].data = [];
+
+    document.querySelectorAll("#lista li").forEach(li => {
+
+        const nome =
+            li.querySelector(".nome-ref").innerText.trim();
+
+        const calorias =
+            parseInt(
+                li.querySelector(".cal-ref")
+                .innerText.replace(" kcal", "")
+            );
+
+        grafico.data.labels.push(nome);
+
+        grafico.data.datasets[0].data.push(calorias);
+    });
+
+    grafico.update();
+}
+
+function novoDia(){
+
+    if(confirm("Deseja limpar as refeições de hoje?")){
+
         localStorage.removeItem('alimentosHoje');
+
         location.reload();
     }
 }
 
 window.onload = inicializar;
+
 </script>
+
 </body>
 </html>
