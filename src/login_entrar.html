@@ -89,7 +89,7 @@
 
         .category-card{
             border:2px solid #f1f5f9;
-            padding:15px;
+            padding:18px;
             border-radius:15px;
             cursor:pointer;
             transition:0.3s;
@@ -100,14 +100,26 @@
             display:none;
         }
 
-        .category-card span{
-            display:block;
-            font-size:1.5rem;
-            margin-bottom:5px;
+        /* ÍCONES NOVOS */
+        .icon{
+            width:42px;
+            height:42px;
+            margin:0 auto 10px;
+            border-radius:12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#f8fafc;
+        }
+
+        .icon svg{
+            width:22px;
+            height:22px;
+            stroke:var(--text-main);
         }
 
         .category-card p{
-            font-size:0.8rem;
+            font-size:0.82rem;
             font-weight:700;
             color:var(--text-muted);
         }
@@ -115,6 +127,10 @@
         .category-card:has(input:checked){
             border-color:var(--primary);
             background:rgba(74, 222, 128, 0.05);
+        }
+
+        .category-card:has(input:checked) .icon{
+            background:rgba(74, 222, 128, 0.15);
         }
 
         .input-group{
@@ -173,14 +189,16 @@
             margin-top:1rem;
             text-align:center;
             font-weight:700;
+            opacity:1;
+            transition:0.3s;
         }
 
         .success{
-            color:green;
+            color:#16a34a;
         }
 
         .error{
-            color:red;
+            color:#dc2626;
         }
     </style>
 </head>
@@ -200,29 +218,59 @@
     <div id="cadastroArea">
 
         <div class="category-grid">
+
             <label class="category-card">
                 <input type="radio" name="perfil" value="fitness" checked>
-                <span>💪</span>
+
+                <div class="icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M14.25 6.087c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v2.326a1.125 1.125 0 01-.33.795l-1.72 1.72m-7.4 7.4-1.72 1.72a1.125 1.125 0 01-.795.33H3.712A1.125 1.125 0 012.587 19.5v-1.5c0-.621.504-1.125 1.125-1.125h2.326a1.125 1.125 0 00.795-.33l7.417-7.417a1.125 1.125 0 000-1.59l-1.788-1.788a1.125 1.125 0 00-1.59 0L3.455 13.167"/>
+                    </svg>
+                </div>
+
                 <p>Fitness</p>
             </label>
 
             <label class="category-card">
                 <input type="radio" name="perfil" value="dia-a-dia">
-                <span>🏠</span>
+
+                <div class="icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 9.75L12 4l9 5.75V20a1 1 0 01-1 1h-5.25v-6h-5.5v6H4a1 1 0 01-1-1V9.75z"/>
+                    </svg>
+                </div>
+
                 <p>Dia a dia</p>
             </label>
 
             <label class="category-card">
                 <input type="radio" name="perfil" value="tratamento">
-                <span>🩺</span>
+
+                <div class="icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6v12m6-6H6"/>
+                    </svg>
+                </div>
+
                 <p>Tratamento</p>
             </label>
 
             <label class="category-card">
                 <input type="radio" name="perfil" value="performance">
-                <span>⚡</span>
+
+                <div class="icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 4.5L21 12l-7.5 7.5M3 12h18"/>
+                    </svg>
+                </div>
+
                 <p>Performance</p>
             </label>
+
         </div>
 
         <div class="input-group">
@@ -268,94 +316,163 @@
 
     const btnCadastro = document.getElementById("btnCadastro");
     const btnLogin = document.getElementById("btnLogin");
-
     const cadastroArea = document.getElementById("cadastroArea");
     const loginArea = document.getElementById("loginArea");
+    const mensagem = document.getElementById("mensagem");
 
+    // MOSTRAR MENSAGEM E SUMIR EM 3 SEGUNDOS
+    function mostrarMensagem(texto, tipo){
+
+        mensagem.innerHTML = texto;
+        mensagem.className = "msg " + tipo;
+        mensagem.style.opacity = "1";
+
+        setTimeout(() => {
+            mensagem.style.opacity = "0";
+
+            setTimeout(() => {
+                mensagem.innerHTML = "";
+                mensagem.className = "msg";
+            }, 300);
+
+        }, 3000);
+    }
+
+    // RESETAR FORMULÁRIOS
+    function resetarFormularios() {
+
+        mensagem.innerHTML = "";
+        mensagem.className = "msg";
+
+        document.getElementById("cadEmail").value = "";
+        document.getElementById("cadSenha").value = "";
+        document.getElementById("loginEmail").value = "";
+        document.getElementById("loginSenha").value = "";
+    }
+
+    // ABA CADASTRO
     btnCadastro.onclick = () => {
+
         cadastroArea.classList.remove("hidden");
         loginArea.classList.add("hidden");
 
-        btnCadastro.classList.add("active");
-        btnCadastro.classList.remove("inactive");
+        btnCadastro.className = "active";
+        btnLogin.className = "inactive";
 
-        btnLogin.classList.add("inactive");
-        btnLogin.classList.remove("active");
+        resetarFormularios();
     }
 
+    // ABA LOGIN
     btnLogin.onclick = () => {
+
         loginArea.classList.remove("hidden");
         cadastroArea.classList.add("hidden");
 
-        btnLogin.classList.add("active");
-        btnLogin.classList.remove("inactive");
+        btnLogin.className = "active";
+        btnCadastro.className = "inactive";
 
-        btnCadastro.classList.add("inactive");
-        btnCadastro.classList.remove("active");
+        resetarFormularios();
     }
 
+    // CADASTRAR
     function cadastrar(){
 
-        const email = document.getElementById("cadEmail").value;
+        const email = document.getElementById("cadEmail").value.trim();
         const senha = document.getElementById("cadSenha").value;
         const perfil = document.querySelector('input[name="perfil"]:checked').value;
 
-        const mensagem = document.getElementById("mensagem");
-
         if(email === "" || senha === ""){
-            mensagem.innerHTML = "Preencha todos os campos.";
-            mensagem.className = "msg error";
+            mostrarMensagem("Preencha todos os campos.", "error");
             return;
         }
 
-        // SALVAR NO "BANCO"
-        const usuario = {
+        const usuariosCadastrados =
+            JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        const emailExiste =
+            usuariosCadastrados.some(user => user.email === email);
+
+        if(emailExiste){
+            mostrarMensagem("Este e-mail já está cadastrado.", "error");
+            return;
+        }
+
+        const novoUsuario = {
             email: email,
             senha: senha,
             perfil: perfil
         };
 
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+        usuariosCadastrados.push(novoUsuario);
 
-        mensagem.innerHTML = "Conta criada com sucesso!";
-        mensagem.className = "msg success";
+        localStorage.setItem(
+            "usuarios",
+            JSON.stringify(usuariosCadastrados)
+        );
 
+        // MENSAGEM
+        mostrarMensagem("Conta criada com sucesso!", "success");
+
+        // LIMPA INPUTS
         document.getElementById("cadEmail").value = "";
         document.getElementById("cadSenha").value = "";
+
+        // VAI DIRETO PARA LOGIN
+        setTimeout(() => {
+
+            loginArea.classList.remove("hidden");
+            cadastroArea.classList.add("hidden");
+
+            btnLogin.className = "active";
+            btnCadastro.className = "inactive";
+
+            // já joga o email no login
+            document.getElementById("loginEmail").value = email;
+
+        }, 1200);
     }
 
+    // LOGIN
     function entrar(){
 
-        const email = document.getElementById("loginEmail").value;
+        const email = document.getElementById("loginEmail").value.trim();
         const senha = document.getElementById("loginSenha").value;
 
-        const mensagem = document.getElementById("mensagem");
-
-        // PEGAR DO "BANCO"
-        const usuarioSalvo = JSON.parse(localStorage.getItem("usuario"));
-
-        if(!usuarioSalvo){
-            mensagem.innerHTML = "Nenhum usuário cadastrado.";
-            mensagem.className = "msg error";
+        if(email === "" || senha === ""){
+            mostrarMensagem("Preencha todos os campos.", "error");
             return;
         }
 
-        if(email === usuarioSalvo.email && senha === usuarioSalvo.senha){
+        const usuariosCadastrados =
+            JSON.parse(localStorage.getItem("usuarios")) || [];
 
-            mensagem.innerHTML = 
-            "Login realizado! Perfil: " + usuarioSalvo.perfil.toUpperCase();
+        const usuarioEncontrado =
+            usuariosCadastrados.find(
+                user => user.email === email && user.senha === senha
+            );
 
-            mensagem.className = "msg success";
+        if(usuarioEncontrado){
 
-            // REDIRECIONAR
+            mostrarMensagem(
+                "Login realizado com sucesso!",
+                "success"
+            );
+
+            sessionStorage.setItem(
+                "usuarioLogado",
+                JSON.stringify(usuarioEncontrado)
+            );
+
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 1500);
 
         } else {
 
-            mensagem.innerHTML = "E-mail ou senha incorretos.";
-            mensagem.className = "msg error";
+            mostrarMensagem(
+                "E-mail ou senha incorretos.",
+                "error"
+            );
         }
     }
 
