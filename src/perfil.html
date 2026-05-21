@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | NutriTrack</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4ade80;
+            --primary-dark: #22c55e;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 28px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        /* HEADER PADRONIZADO */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--primary-dark), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover { color: var(--primary-dark); }
+
+        /* MAIN */
+        main {
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 500px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            text-align: center;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar-section {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .avatar-preview {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark), #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+            transition: 0.5s;
+        }
+
+        .edit-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--text-main);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 3px solid white;
+        }
+
+        h2 { font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; }
+        .subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+        /* INPUTS */
+        .input-group { text-align: left; margin-bottom: 1.5rem; }
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #f1f5f9;
+            border-radius: 16px;
+            outline: none;
+            transition: 0.3s;
+            background: #f8fafc;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
+        }
+
+        /* PERFIL TYPE SELECTOR */
+        .type-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .type-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #f1f5f9;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 800;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .type-btn.active {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 18px;
+            background: var(--text-main);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-save:hover {
+            background: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        footer { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="nutritracK_1_-removebg-preview.png" alt="logo" height="30">
+            <h1>NutriTrack</h1>
+        </div>
+        <p style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Smart Nutrition 2026</p>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="historico.html">Histórico</a>
+        <a href="perfil.html" style="color: var(--primary-dark)">Perfil</a>
+    </nav>
+</header>
+
+<main>
+    <div class="profile-container">
+        <div class="card">
+            <div class="avatar-section">
+                <div class="avatar-preview" id="avatar">J</div>
+                <div class="edit-badge">✎</div>
+            </div>
+            
+            <h2>Sua Conta</h2>
+            <p class="subtitle">Gerencie suas metas e preferências</p>
+
+            <div class="input-group">
+                <label>Nome Completo</label>
+                <input type="text" id="userName" placeholder="Seu nome" oninput="updateAvatar()">
+            </div>
+
+            <div class="input-group">
+                <label>Objetivo Principal</label>
+                <div class="type-selector">
+                    <button class="type-btn active" onclick="setPerfil('fitness', this)">💪 Fitness</button>
+                    <button class="type-btn" onclick="setPerfil('tratamento', this)">🩺 Saúde</button>
+                    <button class="type-btn" onclick="setPerfil('performance', this)">⚡ Elite</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Meta de Calorias (kcal)</label>
+                <input type="number" id="userGoal" placeholder="Ex: 2000">
+            </div>
+
+            <button class="btn-save" onclick="salvarPerfil()">Atualizar Dados</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 NutriTrack Framework • Design System v3.0</p>
+</footer>
+
+<script>
+    let perfilSelecionado = 'fitness';
+
+    // Carregar dados existentes ao abrir
+    window.onload = () => {
+        const nome = localStorage.getItem('nutri_nome') || "";
+        const meta = localStorage.getItem('nutri_meta') || "";
+        const perfil = localStorage.getItem('perfilUsuario') || "fitness";
+        
+        document.getElementById('userName').value = nome;
+        document.getElementById('userGoal').value = meta;
+        updateAvatar();
+    };
+
+    function updateAvatar() {
+        const name = document.getElementById('userName').value;
+        const avatar = document.getElementById('avatar');
+        avatar.innerText = name ? name.charAt(0).toUpperCase() : "U";
+    }
+
+    function setPerfil(tipo, btn) {
+        perfilSelecionado = tipo;
+        document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    function salvarPerfil() {
+        const nome = document.getElementById('userName').value;
+        const meta = document.getElementById('userGoal').value;
+
+        if(!nome || !meta) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        localStorage.setItem('nutri_nome', nome);
+        localStorage.setItem('nutri_meta', meta);
+        localStorage.setItem('perfilUsuario', perfilSelecionado);
+
+        alert("Perfil atualizado com sucesso! Suas metas foram sincronizadas.");
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
