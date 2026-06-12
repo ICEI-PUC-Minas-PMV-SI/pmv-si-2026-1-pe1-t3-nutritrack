@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histórico | NutriTrack</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary:#4ade80;
+    --primary-dark:#22c55e;
+    --bg-body:#f8fafc;
+    --bg-card:#ffffff;
+    --text-main:#1e293b;
+    --text-muted:#64748b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
+
+body{
+    background:var(--bg-body);
+}
+
+header{
+    padding:1.5rem 5%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+nav a{
+    margin-left:1.5rem;
+    text-decoration:none;
+    color:var(--text-muted);
+    font-weight:600;
+}
+
+nav a:hover{color:var(--primary-dark);}
+
+main{
+    padding:2rem 5%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    padding:12px;
+    margin-top:10px;
+    background:#f1f5f9;
+    border-left:4px solid var(--primary);
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Histórico</h2>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="historico.html" style="color:var(--primary-dark)">Histórico</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+</header>
+
+<main>
+
+<div class="card">
+    <h2>Refeições Registradas</h2>
+    <ul id="lista"></ul>
+</div>
+
+</main>
+
+<script>
+
+function carregar(){
+
+    const lista = document.getElementById("lista");
+
+    const dados =
+        JSON.parse(localStorage.getItem("alimentosHoje")) || [];
+
+    dados.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <strong>${item.nome}</strong> - ${item.calorias} kcal
+        `;
+
+        lista.appendChild(li);
+    });
+}
+
+window.onload = carregar;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorar | NutriTrack</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary:#4ade80;
+    --primary-dark:#22c55e;
+    --bg-body:#f8fafc;
+    --bg-card:#ffffff;
+    --text-main:#1e293b;
+    --text-muted:#64748b;
+    --radius:24px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
+
+body{
+    background:var(--bg-body);
+    color:var(--text-main);
+}
+
+header{
+    background:white;
+    padding:1.5rem 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #eee;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text-muted);
+    margin-left:1.5rem;
+    font-weight:600;
+}
+
+nav a:hover{color:var(--primary-dark);}
+
+main{
+    padding:2rem 5%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.card{
+    background:var(--bg-card);
+    padding:2rem;
+    border-radius:var(--radius);
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+button{
+    margin-top:1rem;
+    padding:0.8rem;
+    width:100%;
+    border:none;
+    border-radius:12px;
+    background:var(--primary-dark);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Explorar</h2>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="explorar.html" style="color:var(--primary-dark)">Explorar</a>
+        <a href="historico.html">Histórico</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+</header>
+
+<main>
+
+<h2>Planos alimentares</h2>
+
+<div class="grid">
+
+<div class="card">
+    <h3>💪 Fitness</h3>
+    <p>Dieta rica em proteínas</p>
+    <button onclick="selecionar('fitness')">Selecionar</button>
+</div>
+
+<div class="card">
+    <h3>🩺 Tratamento</h3>
+    <p>Controle de saúde</p>
+    <button onclick="selecionar('tratamento')">Selecionar</button>
+</div>
+
+<div class="card">
+    <h3>⚡ Performance</h3>
+    <p>Alta performance energética</p>
+    <button onclick="selecionar('performance')">Selecionar</button>
+</div>
+
+</div>
+
+</main>
+
+<script>
+function selecionar(tipo){
+    localStorage.setItem("perfilUsuario", tipo);
+    alert("Plano selecionado!");
+}
+</script>
+
+</body>
+</html>
