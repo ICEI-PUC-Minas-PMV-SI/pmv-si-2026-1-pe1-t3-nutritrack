@@ -2,32 +2,41 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Web Application Template
+title: NutriTrack
 message: >-
   Repositório padrão para o Eixo 1 - Projeto 1: Aplicações
   Web da PUC Minas.
 type: software
 authors:
-  - given-names: Aluno 1
-    family-names: Nome Completo
+  - given-names: Iago Augusto Rocha
+    family-names: de Paula Pereira
     email: aluno@pucminas.br
     affiliation: PUC Minas
-  - given-names: Hugo
-    name-particle: 'B '
-    family-names: de Paula
-    name-suffix: Prof.
-    email: hugo@pucminas.br
+  - given-names: Larissa Evelyn
+    family-names: Marques da Silva
+    email: aluno@pucminas.br
     affiliation: PUC Minas
-    orcid: 'https://orcid.org/0000-0002-6193-3205'
+  - given-names: Tiago Marcio
+    family-names: Oliveira Azevedo
+    email: aluno@pucminas.br
+    affiliation: PUC Minas
+  - given-names: Clovis Lemos
+    family-names: Tavares
+    name-suffix: Prof.
+    email: clovis.tavares@pucminas.br
+    affiliation: PUC Minas
 repository-code: >-
-  https://github.com/ICEI-PUC-Minas-PMV-SI/WebApplicationProject-Template
+  https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2026-1-pe1-t3-nutritrack
 abstract: >-
-  Descrever resumidamente, em um ou dois parágrafos, o
-  projeto que foi desenvolvido.
+  O projeto NutriTrack consiste no desenvolvimento de um sistema web de
+  contagem de calorias, voltado para auxiliar usuários no controle da
+  alimentação diária. O sistema permite o registro de alimentos consumidos,
+  cálculo aproximado de calorias e acompanhamento da ingestão ao longo do dia.
 keywords:
   - Desenvolvimento Web
   - HTML
   - CSS
   - JavaScript
-  - Template
-date-released: '2024-06-23'
+  - Contagem de Calorias
+  - Nutrição
+date-released: '2026-06-12'
