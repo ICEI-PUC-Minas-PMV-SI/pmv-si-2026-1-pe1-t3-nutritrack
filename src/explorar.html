@@ -1,88 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Explorar | NutriTrack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar | NutriTrack</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --primary:#4ade80;
-    --primary-dark:#22c55e;
-    --bg-body:#f8fafc;
-    --bg-card:#ffffff;
-    --text-main:#1e293b;
-    --text-muted:#64748b;
-    --radius:24px;
-}
+    <style>
+        :root {
+            --primary: #4ade80;
+            --primary-dark: #22c55e;
+            --secondary: #3b82f6;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 24px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-body{
-    background:var(--bg-body);
-    color:var(--text-main);
-}
+        body{
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-header{
-    background:white;
-    padding:1.5rem 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #eee;
-}
+        header{
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
-nav a{
-    text-decoration:none;
-    color:var(--text-muted);
-    margin-left:1.5rem;
-    font-weight:600;
-}
+        header h1{
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-nav a:hover{color:var(--primary-dark);}
+        nav a{
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
 
-main{
-    padding:2rem 5%;
-    max-width:1200px;
-    margin:auto;
-}
+        nav a:hover{
+            color: var(--primary-dark);
+        }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:2rem;
-}
+        main{
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-.card{
-    background:var(--bg-card);
-    padding:2rem;
-    border-radius:var(--radius);
-    box-shadow:0 10px 20px rgba(0,0,0,0.05);
-}
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-button{
-    margin-top:1rem;
-    padding:0.8rem;
-    width:100%;
-    border:none;
-    border-radius:12px;
-    background:var(--primary-dark);
-    color:white;
-    font-weight:700;
-    cursor:pointer;
-}
-</style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card{
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        button{
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 16px;
+            background: var(--primary-dark);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background: #16a34a;
+            transform: scale(1.02);
+        }
+
+        footer{
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h2>Explorar</h2>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="nutri.png" height="60" alt="Logo NutriTrack">
+    </div>
     <nav>
         <a href="index.html">Início</a>
-        <a href="explorar.html" style="color:var(--primary-dark)">Explorar</a>
+        <a href="explorar.html" style="color: var(--primary-dark)">Explorar</a>
         <a href="historico.html">Histórico</a>
         <a href="perfil.html">Perfil</a>
     </nav>
@@ -90,36 +159,46 @@ button{
 
 <main>
 
-<h2>Planos alimentares</h2>
+    <h2 class="page-title"> Planos Alimentares Disponíveis</h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div class="card">
-    <h3>💪 Fitness</h3>
-    <p>Dieta rica em proteínas</p>
-    <button onclick="selecionar('fitness')">Selecionar</button>
-</div>
+        <div class="card">
+            <div>
+                <h3>💪 Fitness</h3>
+                <p>Dieta focada em hipertrofia e ganho de massa.</p>
+            </div>
+            <button onclick="selecionar('fitness')">Selecionar Plano</button>
+        </div>
 
-<div class="card">
-    <h3>🩺 Tratamento</h3>
-    <p>Controle de saúde</p>
-    <button onclick="selecionar('tratamento')">Selecionar</button>
-</div>
+        <div class="card">
+            <div>
+                <h3>🩺 Tratamento</h3>
+                <p>Ideal para controle glicêmico e reeducação alimentar detalhada.</p>
+            </div>
+            <button onclick="selecionar('tratamento')">Selecionar Plano</button>
+        </div>
 
-<div class="card">
-    <h3>⚡ Performance</h3>
-    <p>Alta performance energética</p>
-    <button onclick="selecionar('performance')">Selecionar</button>
-</div>
+        <div class="card">
+            <div>
+                <h3>⚡ Performance</h3>
+                <p>Foco em alta performance energética para atletas.</p>
+            </div>
+            <button onclick="selecionar('performance')">Selecionar Plano</button>
+        </div>
 
-</div>
+    </div>
 
 </main>
+
+<footer>
+    <p>© 2026 NutriTrack Framework • Smart Nutrition System</p>
+</footer>
 
 <script>
 function selecionar(tipo){
     localStorage.setItem("perfilUsuario", tipo);
-    alert("Plano selecionado!");
+    alert(`Plano ${tipo.toUpperCase()} ativado com sucesso no seu perfil!`);
 }
 </script>
 
