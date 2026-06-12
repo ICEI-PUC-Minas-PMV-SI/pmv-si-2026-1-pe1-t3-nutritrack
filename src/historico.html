@@ -1,115 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Histórico | NutriTrack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico | NutriTrack</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --primary:#4ade80;
-    --primary-dark:#22c55e;
-    --bg-body:#f8fafc;
-    --bg-card:#ffffff;
-    --text-main:#1e293b;
-    --text-muted:#64748b;
-}
+    <style>
+        :root {
+            --primary: #4ade80;
+            --primary-dark: #22c55e;
+            --secondary: #3b82f6;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 24px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-body{
-    background:var(--bg-body);
-}
+        body{
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-header{
-    padding:1.5rem 5%;
-    background:white;
-    display:flex;
-    justify-content:space-between;
-    border-bottom:1px solid #eee;
-}
+        header{
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
-nav a{
-    margin-left:1.5rem;
-    text-decoration:none;
-    color:var(--text-muted);
-    font-weight:600;
-}
+        header h1{
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-nav a:hover{color:var(--primary-dark);}
+        nav a{
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
 
-main{
-    padding:2rem 5%;
-    max-width:1000px;
-    margin:auto;
-}
+        nav a:hover{
+            color: var(--primary-dark);
+        }
 
-.card{
-    background:white;
-    padding:2rem;
-    border-radius:20px;
-}
+        main{
+            padding: 2rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-ul{
-    list-style:none;
-}
+        .card{
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
 
-li{
-    padding:12px;
-    margin-top:10px;
-    background:#f1f5f9;
-    border-left:4px solid var(--primary);
-    border-radius:10px;
-}
-</style>
+        h2{
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        ul li{
+            padding: 14px;
+            background: #f8fafc;
+            border-radius: 14px;
+            margin-top: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .meal-item-history {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .meal-item-history strong {
+            font-weight: 700;
+        }
+
+        .meal-item-history span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(74, 222, 128, 0.1);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h2>Histórico</h2>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="nutri.png" height="60" alt="Logo NutriTrack">
+       
+    </div>
     <nav>
         <a href="index.html">Início</a>
         <a href="explorar.html">Explorar</a>
-        <a href="historico.html" style="color:var(--primary-dark)">Histórico</a>
+        <a href="historico.html" style="color: var(--primary-dark)">Histórico</a>
         <a href="perfil.html">Perfil</a>
     </nav>
 </header>
 
 <main>
-
-<div class="card">
-    <h2>Refeições Registradas</h2>
-    <ul id="lista"></ul>
-</div>
-
+    <div class="card">
+        <h2>📝 Refeições Registradas</h2>
+        <ul id="lista"></ul>
+    </div>
 </main>
 
+<footer>
+    <p>© 2026 NutriTrack Framework • Smart Nutrition System</p>
+</footer>
+
 <script>
-
 function carregar(){
-
     const lista = document.getElementById("lista");
+    const dados = JSON.parse(localStorage.getItem("alimentosHoje")) || [];
 
-    const dados =
-        JSON.parse(localStorage.getItem("alimentosHoje")) || [];
+    if (dados.length === 0) {
+        lista.innerHTML = `<p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 1rem;">Nenhuma refeição registrada para hoje.</p>`;
+        return;
+    }
 
     dados.forEach(item => {
-
         const li = document.createElement("li");
-
         li.innerHTML = `
-            <strong>${item.nome}</strong> - ${item.calorias} kcal
+            <div class="meal-item-history">
+                <strong>${item.nome}</strong>
+                <span>${item.calorias} kcal</span>
+            </div>
         `;
-
         lista.appendChild(li);
     });
 }
 
 window.onload = carregar;
-
 </script>
 
 </body>
