@@ -57,21 +57,21 @@
 | *Caso de Teste*                  | *CT01 - Cadastro de usuário*  |
 | -------------------------------- | ----------------------------- |
 | Requisito Associado              | RF-001 - Cadastro de usuários |
-| Link do vídeo do teste realizado | Inserir link do vídeo         |
+| Link do vídeo do teste realizado |https://drive.google.com/file/d/15G6pkLr_zbv2AmwfsH6BqYMOKsmEoPFn/view?usp=drive_link|
 
 ---
 
 | *Caso de Teste*                  | *CT02 - Login no sistema*  |
 | -------------------------------- | -------------------------- |
 | Requisito Associado              | RF-002 - Login de usuários |
-| Link do vídeo do teste realizado | Inserir link do vídeo      |
+| Link do vídeo do teste realizado |https://drive.google.com/file/d/1saLByLkWIuUxVLvt6XWXeyNtqMYp1vZG/view?usp=drive_link |
 
 ---
 
 | *Caso de Teste*                  | *CT03 - Registro de refeição*  |
 | -------------------------------- | ------------------------------ |
 | Requisito Associado              | RF-003 - Registro de refeições |
-| Link do vídeo do teste realizado | Inserir link do vídeo          |
+| Link do vídeo do teste realizado |https://drive.google.com/file/d/1oIzdN_MWmkaZiTsbp7MDnEFR39M1k9in/view?usp=drive_link|
 
 ---
 
@@ -85,7 +85,7 @@
 | *Caso de Teste*                  | *CT05 - Escolha de plano nutricional* |
 | -------------------------------- | ------------------------------------- |
 | Requisito Associado              | RF-005 - Planos nutricionais          |
-| Link do vídeo do teste realizado | Inserir link do vídeo                 |
+| Link do vídeo do teste realizado |https://drive.google.com/file/d/1fcs6iBpZlDprpBF0WZ_8O1LR_MOiFX9E/view?usp=drive_link|
 
 ---
 
