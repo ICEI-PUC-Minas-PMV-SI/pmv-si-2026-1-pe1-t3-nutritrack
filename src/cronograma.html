@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cronograma | NutriTrack</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4ade80;
+            --primary-dark: #22c55e;
+            --secondary: #3b82f6;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 24px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        /* HEADER PADRONIZADO */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover { color: var(--primary-dark); }
+
+        /* MAIN */
+        main {
+            padding: 3rem 5%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        /* ESTILO DOS INPUTS DE HORÁRIO */
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .input-row:last-child { border: none; }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input {
+            padding: 0.8rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            outline: none;
+            transition: 0.3s;
+            background: #f8fafc;
+            font-size: 0.95rem;
+        }
+
+        input[type="time"] {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 14px;
+            background: var(--primary-dark);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-save:hover {
+            background: #16a34a;
+            transform: scale(1.02);
+        }
+
+        /* TOAST NOTIFICATION PADRONIZADO */
+        .toast-notificacao {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 1000;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .toast-notificacao.mostrar {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast" class="toast-notificacao"></div>
+
+<header>
+    <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="nutri.png" alt="logo" height="60">
+        </div>
+        <p id="user-greeting" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">CARREGANDO...</p>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="historico.html">Histórico</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+</header>
+
+<main>
+    <div class="page-header">
+        <h2>Personalizar Horários</h2>
+        <p style="color: var(--text-muted)">Defina os melhores momentos para suas refeições</p>
+    </div>
+
+    <div class="card">
+        <div class="input-row">
+            <div class="field-group">
+                <label>Refeição</label>
+                <input type="text" value="🍳 Café da manhã">
+            </div>
+            <div class="field-group">
+                <label>Horário</label>
+                <input type="time" value="08:00">
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="field-group">
+                <label>Refeição</label>
+                <input type="text" value="🍛 Almoço">
+            </div>
+            <div class="field-group">
+                <label>Horário</label>
+                <input type="time" value="12:00">
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="field-group">
+                <label>Refeição</label>
+                <input type="text" value="🍎 Lanche">
+            </div>
+            <div class="field-group">
+                <label>Horário</label>
+                <input type="time" value="16:00">
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="field-group">
+                <label>Refeição</label>
+                <input type="text" value="🍽️ Jantar">
+            </div>
+            <div class="field-group">
+                <label>Horário</label>
+                <input type="time" value="20:00">
+            </div>
+        </div>
+
+        <button class="btn-save" onclick="salvarCronograma()">
+            Salvar Cronograma
+        </button>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 NutriTrack Framework • Smart Nutrition System</p>
+</footer>
+
+<script>
+    function inicializar() {
+        const perfil = localStorage.getItem('perfilUsuario') || 'dia-a-dia';
+        const nomeSalvo = localStorage.getItem('nutri_nome') || 'Usuário';
+        document.getElementById('user-greeting').innerText = `OLÁ, ${nomeSalvo.toUpperCase()} | PERFIL: ${perfil.toUpperCase()}`;
+
+        // Se o usuário já tiver horários customizados, carrega nos campos correspondentes
+        const cronoSalvo = JSON.parse(localStorage.getItem('meuCronograma'));
+        if (cronoSalvo && cronoSalvo.length > 0) {
+            const linhas = document.querySelectorAll('.input-row');
+            linhas.forEach((linha, index) => {
+                if (cronoSalvo[index]) {
+                    linha.querySelector('input[type="text"]').value = cronoSalvo[index].nome;
+                    linha.querySelector('input[type="time"]').value = cronoSalvo[index].hora;
+                }
+            });
+        }
+    }
+
+    function dispararToast(mensagem, corFundo) {
+        const toast = document.getElementById('toast');
+        toast.innerText = mensagem;
+        toast.style.backgroundColor = corFundo;
+        toast.classList.add('mostrar');
+        
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
+    }
+
+    function salvarCronograma() {
+        const linhas = document.querySelectorAll('.input-row');
+        const dadosCronograma = [];
+
+        linhas.forEach(linha => {
+            const nome = linha.querySelector('input[type="text"]').value;
+            const hora = linha.querySelector('input[type="time"]').value;
+            dadosCronograma.push({ nome, hora });
+        });
+
+        // Grava as alterações estruturadas no LocalStorage
+        localStorage.setItem('meuCronograma', JSON.stringify(dadosCronograma));
+
+        // Feedback visual unificado via toast
+        dispararToast("✅ Cronograma atualizado com sucesso!", "#22c55e");
+    }
+
+    window.onload = inicializar;
+</script>
+
+</body>
+</html>
