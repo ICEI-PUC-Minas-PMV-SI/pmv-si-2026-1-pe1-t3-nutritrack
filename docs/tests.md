@@ -78,7 +78,7 @@
 | *Caso de Teste*                  | *CT04 - Cronograma alimentar* |
 | -------------------------------- | ----------------------------- |
 | Requisito Associado              | RF-004 - Cronograma alimentar |
-| Link do vídeo do teste realizado | Inserir link do vídeo         |
+| Link do vídeo do teste realizado |https://drive.google.com/file/d/1IQMhM4y_MIOoZUSPLa7FoHYhryP-X2an/view?usp=drive_link|
 
 ---
 
