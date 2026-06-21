@@ -4,7 +4,7 @@
 
 ### 1. Pitch Inicial
 
-**Arquivo:** `presentation/Pitch_Inicial_NutriTrack.pdf`
+**Arquivo:** `https://1drv.ms/p/c/e4bc50f2bd64cc1b/IQD3eH5IPyEUSYbVxiYqMmJIAQzyQApBXPUYrEdEYwLnAZA?e=E6yYJv`
 
 **Descrição:**
 Apresentação inicial do projeto NutriTrack, contendo a definição do problema, público-alvo, objetivos do sistema, proposta de solução, levantamento inicial de requisitos e planejamento das etapas de desenvolvimento.
@@ -13,7 +13,7 @@ Apresentação inicial do projeto NutriTrack, contendo a definição do problema
 
 ### 2. Apresentação Final
 
-**Arquivo:** `presentation/Apresentacao_Final_NutriTrack.pdf`
+**Arquivo:** `https://1drv.ms/p/c/e4bc50f2bd64cc1b/IQD3eH5IPyEUSYbVxiYqMmJIAQzyQApBXPUYrEdEYwLnAZA?e=E6yYJv`
 
 **Descrição:**
 Apresentação final do projeto, contemplando todo o processo de desenvolvimento do sistema NutriTrack, incluindo:
@@ -33,7 +33,7 @@ Apresentação final do projeto, contemplando todo o processo de desenvolvimento
 
 ### 3. Vídeo de Demonstração
 
-**Arquivo:** `presentation/Video_Demonstracao_NutriTrack.mp4`
+**Arquivo:** `(https://drive.google.com/file/d/1AcIeTsnLkOraIaHZfT-GVkbe13rkmenb/view?usp=drive_link)`
 
 **Descrição:**
 Vídeo demonstrativo apresentando o funcionamento do sistema NutriTrack. A gravação mostra as principais funcionalidades implementadas, como cadastro de usuários, registro de alimentos, acompanhamento da ingestão calórica diária, navegação entre as páginas e recursos de apoio ao controle alimentar.
